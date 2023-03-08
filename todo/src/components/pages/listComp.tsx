@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import {useQuery} from 'react-query'
 import axios from 'axios'
 
+interface PostData {
+    id: number;
+    taskid: string;
+    title: string;
+    description: string;
+}
 
 async function fetchTodos(){
     const {data} = await axios.get('http://localhost:3004/todos')    
@@ -36,10 +42,13 @@ export default function ListComp(){
                     COMPONENT LIST
                 </div>
             <div className='card'>
-            <div className='containerCreate'>
-            [data].map(() => {
-                 <li key={data.id}>{data.title}{data.description}</li>
+            <div className='containerList'>
+            {
+            data.map((post:PostData, index:any) => {
+                return <ul key={index}> {post.taskid} : {post.title} <br></br>{post.description}</ul>
             })
+        }
+
                 </div>
                     
             </div>  

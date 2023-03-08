@@ -126,3 +126,10 @@ color: grey }
     margin: 7%;
     height: 150px;
 }
+
+.containerList{
+    color: white;
+    font-family: montserrat;
+    font-size: 180%;
+    text-align: left;
+}
