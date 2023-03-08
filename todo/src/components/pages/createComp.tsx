@@ -45,14 +45,16 @@ export default function CreateComp(){
                     <textarea className="box" placeholder="Task Description" value={description} onChange={e=>setDescription(e.target.value)}/>
                     <button className='submitbtn' onClick={()=>{mutate({id: Date.now(),taskid, title, description})}}>Submit</button>
                 </div>
-            </div>  
-            </div>
-            <p> Created a new Post ID: {message && message.id}</p>
+                
+            </div> 
+            <p> Created a new Post, ID: {message && message.id}</p>
                 <div style={{color: 'gray', background: '#234'}}>
                 {isLoading ? 'Saving...' : ''}
                 {isError ? (error as Error).message : ''}
     
-      </div>
+                </div> 
+            </div>
+            
             <button className='btnComp'><Link to="/">Back to main page</Link></button>
             
         </div>
